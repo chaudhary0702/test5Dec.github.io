@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Color Flipper</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <body>
+            <div class="container">
+                <div class="navbar">
+                    <h2> Color Flipper</h2>
+                </div>
+                <div class="main">
+                    <h2> Background Color: <span class="color">#50A32C</span></h2>
+                    <button type="button" class="btn" onclick="btn()">Click Me</button>
+                </div>
+        
+            </div>
+        <script>
+            const hex =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
+            const color = document.querySelector(".color");
+
+
+            function btn(){
+                let hexColor ="#";
+                for(let i=0; i<6; i++){
+                    hexColor += hex[getRandomNumber()];
+                }
+            color.textContent =hexColor;
+            document.querySelector(".container").style.backgroundColor=hexColor;
+
+            }
+
+            function getRandomNumber(){
+                return Math.floor(Math.random() * hex.length);
+            }
+        </script>
+    </body>
+</html>
+
+
+
